@@ -17,6 +17,7 @@ class SignIn extends React.Component{
 		}
 	}
 
+	//TODO run a validate function and reset the field in a better way (no error popping on field). Do the same for signup
 	handleSubmit = event => {
 		event.preventDefault();
 
