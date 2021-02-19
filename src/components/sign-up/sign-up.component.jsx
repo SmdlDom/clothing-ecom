@@ -8,8 +8,8 @@ import {auth, createUserProfileDocument} from "../../firebase/firebase.utils";
 import './sign-up.styles.scss'
 
 class SignUp extends React.Component {
-	constructor() {
-		super();
+	constructor(props) {
+		super(props);
 
 		this.state = {
 			displayName: '',
@@ -44,6 +44,7 @@ class SignUp extends React.Component {
 				confirmPassword: ''
 			})
 		} catch (error) {
+			//TODO handle error properly
 			console.log(error);
 		}
 	}
@@ -60,7 +61,7 @@ class SignUp extends React.Component {
 			<div className='sign-up'>
 				<h2 className='title'>I do not have an account</h2>
 				<span>Sign up with your email and password</span>
-				<form className='sign-up-form' onSubmit={this.handleSubmit}>
+				<form className='sign-up-form'>
 					<FormInput
 						type='text'
 						name='displayName'
@@ -93,7 +94,7 @@ class SignUp extends React.Component {
 						label='Confirm Password'
 						required
 					/>
-					<CustomButton type='submit'>SIGN UP</CustomButton>
+					<CustomButton onClick={this.handleSubmit}>SIGN UP</CustomButton>
 				</form>
 			</div>
 		)
