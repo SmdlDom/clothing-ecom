@@ -8,6 +8,11 @@ export const CollectionItemContainer = styled.div`
   height: 350px;
   align-items: center;
   position: relative;
+
+  @media screen and (max-width: 768px) {  
+    width: 40vw;
+    border: 2px solid black;
+ }
 `;
 
 export const ImageContainer = styled.div`
@@ -15,10 +20,16 @@ export const ImageContainer = styled.div`
   height: 95%;
   background-size: cover;
   background-position: center;
-  margin-bottom: 5px;
-  
-  ${CollectionItemContainer}:hover & {
-    opacity: 0.8;
+ 
+  @media screen and (min-width: 768px) {
+    ${CollectionItemContainer}:hover & {
+      opacity: 0.8;
+    }
+  }
+  @media screen and (max-width: 768px) {
+    ${CollectionItemContainer}:hover & {
+      cursor: pointer;
+    }
   }
 `;
 
@@ -28,18 +39,32 @@ export const CustomButtonContainer = styled(CustomButton)`
   position: absolute;
   top: 255px;
   display: none;
-  
-  ${CollectionItemContainer}:hover & {
+    
+  @media screen and (min-width: 768px) {
+    ${CollectionItemContainer}:hover & {
       opacity: 0.85;
       display: flex;
     }
   }
+
+  @media screen and (max-width: 768px) {
+      display: block;
+  }
 `;
 
-export const CollectionFooter = styled.div`
+export const CollectionFooterContainer = styled.div`
   width: 100%;
-  height: 5%;
+  height: 8%;
   display: flex;
   justify-content: space-between;
+  @media screen and (max-width: 768px) {
+    justify-content: center;
+    border-top: 2px solid black;
+  }
 `;
 
+export const PriceContainer = styled.span`
+  @media screen and (max-width: 768px) {
+    margin-left: 10px;
+  }
+`;

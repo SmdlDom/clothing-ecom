@@ -6,8 +6,8 @@ import { addItem } from '../../../redux/cart/cart.actions'
 import {
 	CollectionItemContainer,
 	CustomButtonContainer,
-	CollectionFooter,
-	ImageContainer
+	CollectionFooterContainer,
+	ImageContainer, PriceContainer
 } from "./collection-item.styles";
 
 const CollectionItem = ({item, addItem}) => {
@@ -19,10 +19,10 @@ const CollectionItem = ({item, addItem}) => {
 				backgroundImage: `url(${imageUrl})`
 			}}
 		/>
-		<CollectionFooter>
+		<CollectionFooterContainer>
 			<span>{name}</span>
-			<span>{price}</span>
-		</CollectionFooter>
+			<PriceContainer>{price}</PriceContainer>
+		</CollectionFooterContainer>
 		<CustomButtonContainer onClick={()=> addItem(item)} inverted>
 			Add to cart
 		</CustomButtonContainer>
